@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body{
+            text-align: center;
+        }
+        h1{
+            font-size: 40px;
+        }
+        img {
+            max-width: 100%;
+            max-height: auto;
+        }
+
+        label{
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function validateForm() {
+            var userInput = document.getElementById("fname").value.toLowerCase(); 
+            var correctAnswer = "coffin";    
+    
+            var captcha =  document.getElementById("cap").value;
+            var correctCaptcha = "3P4CSE";
+            if (userInput === correctAnswer && captcha == correctCaptcha) {
+                window.location.href = "nextPage.html";
+                return false; 
+            } else {
+                alert("Incorrect answer");
+                return false; 
+            }
+        }
+        </script>
+        
+
+    <section class="text-gray-600 body-font">
+        <h1>
+            Its not as easy as you think it is!!!!
+        </h1>
+        <div>
+            <img src="image2.jpg" />
+        </div>
+        <div>
+            <h1>
+                Read the question and answer
+            </h1>
+            <form onsubmit="return validateForm()" method="POST">
+                <label for="fname">The person who makes it, sells it. The person who buys it never uses it. 
+                    The person who uses it never knows they're using it. What is it?</label>
+                <input type="text" id="fname" name="fname"><br><br>
+
+
+                <label for="cap">Enter the captcha: </label>
+                <input type="text" id="cap" name="cap"><br><br>
+                <button type="submit" style="background-color: rgb(196, 106, 41); border-radius: 25px; padding: 10px 50px; color: rgb(5, 5, 5);">
+                    Submit
+                </button>
+            </form>
+            
+
+        </div>
+    </section>
+</body>
+
+</html>
